@@ -1,0 +1,48 @@
+.card {
+  padding: 4rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+  transition: box-shadow 0.3s ease;
+
+  border: 1px solid rgba($color-grey, 0.4);
+  border-radius: 2rem;
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0 0 4rem 2rem rgba($color-grey, 0.1);
+  }
+
+  &--text-align-right {
+    align-items: flex-start;
+  }
+
+  &__img {
+    width: 12rem;
+    border-radius: 50%;
+  }
+
+  &__btn {
+    margin-top: auto;
+    margin-inline: auto;
+  }
+
+  &__info {
+    color: $color-grey;
+  }
+
+  &__item {
+    margin-top: 3rem;
+    color: $color-grey;
+
+    &:last-child {
+      margin-bottom: 5rem;
+    }
+
+    i {
+      font-size: 2.2rem;
+      margin-right: 0.5rem;
+    }
+  }
+}

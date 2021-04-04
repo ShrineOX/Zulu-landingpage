@@ -1,0 +1,32 @@
+@mixin blueBtn {
+  background-color: $color-primary;
+  color: #fff;
+  border: 1px solid $color-primary-dark;
+}
+
+.btn {
+  display: inline-block;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 2rem 4rem;
+  color: $color-grey;
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 1px solid currentColor;
+  cursor: pointer;
+
+  &--no-border {
+    border: 0;
+  }
+
+  &--blue {
+    @include blueBtn;
+  }
+  &--narrow-pad {
+    padding-inline: 2rem;
+  }
+
+  &:hover {
+    @include blueBtn;
+  }
+}

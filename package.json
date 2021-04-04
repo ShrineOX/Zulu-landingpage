@@ -1,0 +1,17 @@
+{
+  "name": "zulu-landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass sass/main.scss style.css --watch",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel sass devserver"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.32.8"
+  }
+}

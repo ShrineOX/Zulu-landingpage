@@ -1,0 +1,225 @@
+// Header -------------
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+
+  & > *:first-child {
+    // align zulu logo - push nav away from the logo
+    margin-right: 12.5rem;
+  }
+  .nav {
+    display: flex;
+    column-gap: 7.5rem;
+    margin-right: auto;
+  }
+}
+
+.banner {
+  margin-top: 7.5rem;
+  display: flex;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    width: 35%;
+  }
+  &__img {
+    transform: translate(50px, -50px);
+    width: 65%;
+  }
+  .btn:first-child {
+    margin-right: 4rem;
+  }
+}
+
+// SECTION ABOUT-----------
+.about {
+  margin-top: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 4.5rem;
+
+  &__content {
+    margin-top: 7rem;
+    display: flex;
+    gap: 7rem;
+    justify-content: space-between;
+
+    & > div {
+      flex: 1;
+    }
+  }
+}
+
+// SECTION STUDIO
+.studio {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__content {
+    width: calc(40% - 3.5rem);
+    display: grid;
+    grid-auto-rows: repeat(4, auto);
+    row-gap: 3rem;
+
+    justify-items: start;
+  }
+  &__img {
+    width: calc(60% - 3.5rem);
+    transform: scale(1.05) translateX(1rem);
+  }
+}
+
+// SECTION PRICE -----------
+.price {
+  margin-top: 16.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4.5rem;
+
+  &__content {
+    width: 100%;
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+
+    h4 {
+      font-weight: 500;
+      font-size: 3rem;
+    }
+  }
+  &__top-box {
+    width: 100%;
+  }
+  &__price {
+    font-size: 2.3rem;
+    font-weight: 600;
+    position: relative;
+    padding-left: 0.7em;
+    line-height: 1;
+    margin-top: 2.5rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba($color-grey, 0.3);
+
+    sup {
+      font-size: 2.5rem;
+      font-weight: 500;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    span {
+      font-size: 6rem;
+      font-weight: 500;
+    }
+  }
+}
+
+// SECTION CLIENT
+.clients {
+  margin-top: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading-2 {
+    width: 45rem;
+    margin-top: 2.5rem;
+  }
+
+  &__content {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 7rem;
+    text-align: center;
+  }
+  .card {
+    row-gap: 0;
+
+    h4 {
+      margin: 2rem auto 1rem auto;
+      font-size: 3rem;
+      font-weight: 500;
+      color: $color-secondary;
+    }
+    &__job {
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba($color-grey, 0.3);
+      align-self: stretch;
+    }
+
+    .generic-text {
+      padding-top: 2.5rem;
+      padding-bottom: 3rem;
+    }
+
+    &__star-box {
+      color: #ffcb46;
+    }
+  }
+  &__arrow-box {
+    margin-top: 6rem;
+    color: $color-grey;
+    font-size: 3rem;
+
+    i:first-child {
+      margin-right: 4rem;
+    }
+
+    i:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+// SECTION CALL TO ACTION
+.cta {
+  margin-top: 11rem;
+  margin-bottom: 6.5rem;
+
+  &__content {
+    width: 90rem;
+    margin-inline: auto;
+    background-color: #fbfbfb;
+    border-radius: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6.5rem;
+    h2 {
+      width: 46rem;
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+    }
+    a {
+      margin-top: 5.5rem;
+    }
+    p {
+      max-width: 26rem;
+      text-align: center;
+    }
+  }
+
+  &__smile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+  }
+  &__chat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

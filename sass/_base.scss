@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$color-primary: #579aff;
+$color-primary-dark: #4180df;
+$color-secondary: #272e35;
+$color-pink: #ff858d;
+$color-grey: #a5b2c3;
+
+.wrapper {
+  max-width: 144rem;
+  margin: 0 auto;
+  background-color: #fff;
+  color: $color-secondary;
+  font-size: 1.6rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding-top: 4.5rem;
+}
