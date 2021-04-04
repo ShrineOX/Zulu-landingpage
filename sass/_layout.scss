@@ -1,49 +1,30 @@
-// Header -------------
-.header {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-
-  & > *:first-child {
-    // align zulu logo - push nav away from the logo
-    margin-right: 12.5rem;
-  }
-  .nav {
-    display: flex;
-    column-gap: 7.5rem;
-    margin-right: auto;
-  }
+.wrapper {
+  max-width: 144rem;
+  margin: 0 auto;
+  background-color: #fff;
+  color: $color-secondary;
+  font-size: 1.6rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
 }
 
-.banner {
-  margin-top: 7.5rem;
-  display: flex;
-  align-items: center;
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4rem;
-    width: 35%;
-  }
-  &__img {
-    transform: translate(50px, -50px);
-    width: 65%;
-  }
-  .btn:first-child {
-    margin-right: 4rem;
-  }
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding-top: 4.5rem;
 }
 
-// SECTION ABOUT-----------
-.about {
+.section-col-container {
   margin-top: 14rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   row-gap: 4.5rem;
+}
 
+// SECTION ABOUT-----------
+.about {
   &__content {
     margin-top: 7rem;
     display: flex;
@@ -68,7 +49,6 @@
     display: grid;
     grid-auto-rows: repeat(4, auto);
     row-gap: 3rem;
-
     justify-items: start;
   }
   &__img {
@@ -79,18 +59,14 @@
 
 // SECTION PRICE -----------
 .price {
-  margin-top: 16.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 4.5rem;
-
   &__content {
     width: 100%;
     margin-top: 7rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 4rem;
+
+    text-align: left; // reset the center value of section-col-container
 
     h4 {
       font-weight: 500;
@@ -126,11 +102,6 @@
 
 // SECTION CLIENT
 .clients {
-  margin-top: 16rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   .heading-2 {
     width: 45rem;
     margin-top: 2.5rem;
@@ -221,5 +192,13 @@
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+
+  .btn {
+    animation: pulsate 2s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+
+    &:hover {
+      animation: none;
+    }
   }
 }

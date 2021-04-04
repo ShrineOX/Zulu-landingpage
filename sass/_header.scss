@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+
+  & > *:first-child {
+    // align zulu logo - push nav away from the logo
+    margin-right: 12.5rem;
+  }
+  .nav {
+    display: flex;
+    column-gap: 7.5rem;
+    margin-right: auto;
+
+    &__link:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.banner {
+  margin-top: 7.5rem;
+  display: flex;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    width: 35%;
+  }
+  &__img {
+    transform: translate(50px, -50px);
+    width: 65%;
+  }
+  .btn:first-child {
+    margin-right: 4rem;
+  }
+}

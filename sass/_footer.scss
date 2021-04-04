@@ -58,6 +58,9 @@
     display: grid;
     row-gap: 3rem;
   }
+  &__link:hover {
+    color: $color-primary;
+  }
 
   &__heading {
     margin-bottom: 3.5rem;

@@ -22,18 +22,20 @@ $color-secondary: #272e35;
 $color-pink: #ff858d;
 $color-grey: #a5b2c3;
 
-.wrapper {
-  max-width: 144rem;
-  margin: 0 auto;
-  background-color: #fff;
-  color: $color-secondary;
-  font-size: 1.6rem;
-  font-family: Poppins, sans-serif;
-  font-weight: 400;
+// format to blue button
+@mixin blueBtn {
+  background-color: $color-primary;
+  color: #fff;
+  border: 1px solid $color-primary-dark;
 }
 
-.container {
-  max-width: 114rem;
-  margin: 0 auto;
-  padding-top: 4.5rem;
+@keyframes pulsate {
+  10% {
+    transform: translateY(-1.5rem);
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.13);
+  }
+  20% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
 }
