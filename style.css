@@ -413,6 +413,7 @@ html {
 }
 
 .header {
+  box-sizing: content-box;
   display: flex;
   align-items: center;
   font-size: 1.5rem;
@@ -572,7 +573,7 @@ html {
 }
 @media screen and (min-width: 75em) {
   .banner__img {
-    transform: translate(40px, -50px);
+    transform: translate(0, -40px);
   }
 }
 .banner .btn:first-child {

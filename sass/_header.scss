@@ -1,10 +1,12 @@
 .header {
+  box-sizing: content-box;
   display: flex;
   align-items: center;
   font-size: 1.5rem;
   padding: 0.5rem 0;
   background-color: rgba(#fff, 0.95);
   z-index: 50;
+
   & > *:first-child {
     // align zulu logo - push nav away from the logo
     margin-right: auto;
@@ -181,7 +183,7 @@
 
   &__img {
     @include atLarge {
-      transform: translate(40px, -50px);
+      transform: translate(0, -40px);
     }
   }
   .btn:first-child {
