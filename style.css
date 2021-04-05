@@ -15,6 +15,7 @@ a {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 @keyframes pulsate {
@@ -288,16 +289,16 @@ html {
   max-width: 45rem;
   margin-top: 2.5rem;
 }
+.clients__slider {
+  overflow: hidden;
+  width: 100%;
+}
 .clients__content {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 30rem);
+  display: flex;
+  transition: all 0.3s;
   text-align: center;
   justify-content: center;
-  gap: 3rem;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  column-gap: 3rem;
 }
 @media screen and (min-width: 75em) {
   .clients__content {
@@ -306,6 +307,7 @@ html {
   }
 }
 .clients .card {
+  flex: 1 0 30rem;
   row-gap: 0;
 }
 .clients .card h4 {
@@ -331,16 +333,12 @@ html {
   color: #a5b2c3;
   font-size: 3rem;
 }
-@media screen and (min-width: 75em) {
-  .clients__arrow-box {
-    margin-top: 6rem;
-  }
-}
 .clients__arrow-box i:first-child {
   margin-right: 4rem;
 }
 .clients__arrow-box i:hover {
   color: #272e35;
+  cursor: pointer;
 }
 
 .cta {
@@ -417,7 +415,7 @@ html {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 50;
   position: sticky;
@@ -439,6 +437,7 @@ html {
   opacity: 0;
   overflow: hidden;
   transition: all 0.5s;
+  padding-block: 1rem;
   font-size: 1.5rem;
   background-color: rgba(255, 255, 255, 0.95);
   row-gap: 4rem;
@@ -450,7 +449,7 @@ html {
     flex-direction: row;
     justify-content: flex-end;
     position: static;
-    height: auto;
+    height: 100%;
     opacity: 1;
     visibility: visible;
   }
@@ -473,8 +472,18 @@ html {
     column-gap: 6rem;
   }
 }
+@media screen and (min-width: 75em) {
+  .header .nav {
+    column-gap: 7rem;
+  }
+}
 .header .nav__link:hover {
   color: #579aff;
+}
+@media screen and (min-width: 50em) {
+  .header .header__auth .btn:first-child {
+    border: 0;
+  }
 }
 @media screen and (min-width: 50em) {
   .header .header__auth .btn:last-child {
@@ -483,7 +492,7 @@ html {
 }
 @media screen and (min-width: 56.25em) {
   .header .header__auth .btn:last-child {
-    display: initial;
+    display: inline-block;
   }
 }
 .header__nav-btn {

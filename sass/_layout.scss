@@ -214,17 +214,18 @@
     max-width: 45rem;
     margin-top: 2.5rem;
   }
+  &__slider {
+    overflow: hidden;
+    width: 100%;
+  }
 
   &__content {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 30rem);
+    display: flex;
+    transition: all 0.3s;
+
     text-align: center;
     justify-content: center;
-    gap: 3rem;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+    column-gap: 3rem;
 
     @include atLarge {
       column-gap: 7rem;
@@ -232,7 +233,9 @@
     }
   }
   .card {
+    flex: 1 0 30rem;
     row-gap: 0;
+    // width: 30rem;
 
     h4 {
       margin: 2rem auto 1rem auto;
@@ -261,7 +264,7 @@
     font-size: 3rem;
 
     @include atLarge {
-      margin-top: 6rem;
+      // margin-top: 6rem;
     }
 
     i:first-child {
@@ -270,6 +273,7 @@
 
     i:hover {
       color: $color-secondary;
+      cursor: pointer;
     }
   }
 }

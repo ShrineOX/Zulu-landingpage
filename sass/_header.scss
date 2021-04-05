@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   font-size: 1.5rem;
-  padding: 1rem 0;
-  // background-color: green;
+  padding: 0.5rem 0;
   background-color: rgba(#fff, 0.95);
   z-index: 50;
   & > *:first-child {
@@ -30,6 +29,7 @@
     overflow: hidden;
     transition: all 0.5s;
 
+    padding-block: 1rem;
     font-size: 1.5rem;
     background-color: rgba(#fff, 0.95);
     row-gap: 4rem;
@@ -40,7 +40,7 @@
       flex-direction: row;
       justify-content: flex-end;
       position: static;
-      height: auto;
+      height: 100%;
       opacity: 1;
       visibility: visible;
     }
@@ -64,20 +64,28 @@
       flex-direction: row;
       column-gap: 6rem;
     }
+    @include atLarge {
+      column-gap: 7rem;
+    }
 
     &__link:hover {
       color: $color-primary;
     }
   }
 
-  // Toggle Sign Up button to hav more space
   .header__auth {
+    .btn:first-child {
+      @include atMedium {
+        border: 0;
+      }
+    }
+    // Toggle Sign Up button to hav more space
     .btn:last-child {
       @include atMedium {
         display: none;
       }
       @include atExtraMedium {
-        display: initial;
+        display: inline-block;
       }
     }
   }

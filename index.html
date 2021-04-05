@@ -28,22 +28,24 @@
 
         <div class="header__wrapper">
           <ul class="nav">
-            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Product</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#product" class="nav__link">Product</a></li>
+            <li class="nav__item"><a href="#price" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
           </ul>
           <div class="header__auth">
-            <a href="#" class="btn btn--no-border">Login</a>
+            <a href="#" class="btn">Login</a>
             <a href="#" class="btn btn--blue">Sign up</a>
           </div>
+          <!-- show a notification using JS -->
+          <div class="header__notice"></div>
         </div>
         <div class="header__nav-btn">
           <div class="header__nav-icon"></div>
         </div>
       </header>
 
-      <div class="banner hv-wrapper">
+      <div id="home" class="banner hv-wrapper">
         <div class="banner__content">
           <h1 class="heading-1"><span>Make a</span> <span>big impact</span> <span>with exciting</span> videos</h1>
           <p class="generic-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique laudanti</p>
@@ -80,7 +82,7 @@
         </div>
       </section>
 
-      <section class="studio hv-wrapper">
+      <section id="product" class="studio hv-wrapper">
         <div class="studio__content">
           <h3 class="heading-3 heading-3--left heading-3--right">Zulu studio</h3>
           <h2 class="heading-2">From our studio to your screen</h2>
@@ -93,7 +95,7 @@
         <img src="images/zulu-studio.jpg" alt="A desktop with a ball" class="studio__img" />
       </section>
 
-      <section class="price section-col-container">
+      <section id="price" class="price section-col-container">
         <h3 class="heading-3 heading-3--left heading-3--right">pricing</h3>
         <h2 class="heading-2 heading-2--narrow">Select the perfect plan</h2>
         <div class="price__content">
@@ -157,55 +159,86 @@
         </div>
       </section>
 
-      <section class="clients section-col-container">
+      <section id="about" class="clients section-col-container">
         <h3 class="heading-3 heading-3--left heading-3--right">what people say</h3>
         <h2 class="heading-2 heading-2--narrow">Our honorable clients</h2>
-        <div class="clients__content">
-          <div class="card">
-            <img src="images/client-1.jpeg" alt="Edwin Reyes" class="card__img" />
-            <h4 class="heading-4">Edwin Reyes</h4>
-            <p class="card__job">Businessman</p>
-            <p class="generic-text">Lorem ipsum dolor, sit amet consec dolor, sit amet consecam deleniti blanditiis.</p>
-            <div class="card__star-box">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+        <div class="clients__slider">
+          <div class="clients__content">
+            <div class="card">
+              <img src="images/client-1.jpeg" alt="Edwin Reyes" class="card__img" />
+              <h4 class="heading-4">Edwin Reyes</h4>
+              <p class="card__job">Businessman</p>
+              <p class="generic-text">
+                Lorem ipsum dolor, sit amet consec dolor, sit amet consecam deleniti blanditiis.
+              </p>
+              <div class="card__star-box">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="images/client-2.jpeg" alt="Park Jieun" class="card__img" />
-            <h4 class="heading-4">Park Jieun</h4>
-            <p class="card__job">Marketing Head</p>
-            <p class="generic-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus qui nisi cum libero.
-            </p>
-            <div class="card__star-box">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+            <div class="card">
+              <img src="images/client-2.jpeg" alt="Park Jieun" class="card__img" />
+              <h4 class="heading-4">Park Jieun</h4>
+              <p class="card__job">Marketing Head</p>
+              <p class="generic-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus qui nisi cum libero.
+              </p>
+              <div class="card__star-box">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="images/client-3.jpeg" alt="Morgan Turner" class="card__img" />
-            <h4 class="heading-4">Morgan Turner</h4>
-            <p class="card__job">Businessman</p>
-            <p class="generic-text">Lorem ipsum dsec dolor, sit amet consecam deleniti blanditiis.</p>
-            <div class="card__star-box">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+
+            <div class="card">
+              <img src="images/client-2.jpeg" alt="Paui" class="card__img" />
+              <h4 class="heading-4">Paui</h4>
+              <p class="card__job">Businessman</p>
+              <p class="generic-text">Lorem ipsum dsec dolor, sit amet consecam deleniti blanditiis.</p>
+              <div class="card__star-box">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/client-3.jpeg" alt="John Snow" class="card__img" />
+              <h4 class="heading-4">John Snow</h4>
+              <p class="card__job">Businessman</p>
+              <p class="generic-text">Lorem ipsum dsec dolor, sit amet consecam deleniti blanditiis.</p>
+              <div class="card__star-box">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/client-3.jpeg" alt="Morgan Turner" class="card__img" />
+              <h4 class="heading-4">Morgan Turner</h4>
+              <p class="card__job">Businessman</p>
+              <p class="generic-text">Lorem ipsum dsec dolor, sit amet consecam deleniti blanditiis.</p>
+              <div class="card__star-box">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
             </div>
           </div>
         </div>
         <div class="clients__arrow-box">
-          <i class="fas fa-arrow-circle-left"></i>
-          <i class="fas fa-arrow-circle-right"></i>
+          <i class="clients__arr-left fas fa-arrow-circle-left"></i>
+          <i class="clients__arr-right fas fa-arrow-circle-right"></i>
         </div>
       </section>
 
