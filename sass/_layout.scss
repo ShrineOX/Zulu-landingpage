@@ -259,6 +259,7 @@
     }
   }
   &__arrow-box {
+    user-select: none;
     margin-top: 1rem;
     color: $color-grey;
     font-size: 3rem;

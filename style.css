@@ -329,6 +329,7 @@ html {
   color: #ffcb46;
 }
 .clients__arrow-box {
+  user-select: none;
   margin-top: 1rem;
   color: #a5b2c3;
   font-size: 3rem;

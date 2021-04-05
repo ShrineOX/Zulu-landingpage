@@ -53,34 +53,60 @@ function move() {
   cardContainer.style.transform = `translateX(${step * stepDistance}px)`;
 }
 
+function bntDisableCheck(arrow, otherArrow) {
+  Math.abs(step) === moveMax && (arrow.style.visibility = 'hidden');
+  otherArrow.style.visibility = 'visible';
+}
+function isValidMove(step) {
+  return Math.abs(step) <= moveMax;
+}
+function moveLeft() {
+  if (!isValidMove(step + 1)) return;
+  step++;
+  move();
+  bntDisableCheck(arrLeft, arrRight);
+}
+function moveRight() {
+  if (!isValidMove(step - 1)) return;
+  step--;
+  move();
+  bntDisableCheck(arrRight, arrLeft);
+}
+// Event Listener
+arrLeft.addEventListener('click', moveLeft);
+arrRight.addEventListener('click', moveRight);
+
+// Update stepDistance in case user change screen size
+window.addEventListener('resize', () => {
+  updateParameter();
+});
 function updateParameter() {
   gap = window.getComputedStyle(cardContainer).columnGap;
   cardWidth = window.getComputedStyle(cards[0]).width;
   stepDistance = parseInt(cardWidth) + parseInt(gap);
 }
 
-function validMove(arrow, otherArrow) {
-  if (Math.abs(step) === moveMax) {
-    // arrow.style.display = 'none';
-    arrow.style.visibility = 'hidden';
+// Slide the client cards using keyboard - left / right arrows
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    //If intersecting  - Add event listenr
+    if (entries[0].isIntersecting) {
+      window.addEventListener('keydown', moveByKey);
+    } else {
+      //If not intersecting  - Remove event listenr
+      window.removeEventListener('keydown', moveByKey);
+    }
+  },
+  {
+    threshold: 0.5,
   }
-  otherArrow.style.visibility = 'visible';
-  //   otherArrow.style.display = 'inline';
+);
+
+// cant not use cardContainer for this the oberver becase the container will be moved left / right
+// difficult to set threshold of the observer.
+observer.observe(document.querySelector('.clients__slider'));
+
+function moveByKey(event) {
+  event.key === 'ArrowLeft' && moveLeft();
+  event.key === 'ArrowRight' && moveRight();
 }
-
-// Event Listener
-arrLeft.addEventListener('click', () => {
-  step++;
-  validMove(arrLeft, arrRight);
-  move();
-});
-
-arrRight.addEventListener('click', () => {
-  step--;
-  validMove(arrRight, arrLeft);
-  move();
-});
-
-window.addEventListener('resize', () => {
-  updateParameter();
-});
