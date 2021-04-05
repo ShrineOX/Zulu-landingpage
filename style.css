@@ -631,7 +631,7 @@ html {
   transition: transform 0.3s;
 }
 .btn--no-border {
-  border: 0;
+  border-color: transparent;
 }
 .btn--blue {
   background-color: #579aff;
