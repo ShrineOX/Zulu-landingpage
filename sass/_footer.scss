@@ -1,18 +1,40 @@
 .footer {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 8rem;
-  padding-left: 4rem;
-  padding-right: 3rem;
   line-height: 1;
+
+  @include atExtraMedium {
+    padding-left: 4rem;
+    padding-right: 3rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
   &__left {
     display: grid;
-    row-gap: 4rem;
-    margin-right: auto;
-    max-width: 21rem;
+    row-gap: 2rem;
+    margin: 4rem auto 6rem auto;
+    text-align: center;
     font-weight: 300;
+    justify-content: center;
+
+    & > * {
+      justify-content: center;
+    }
+
+    @include atExtraMedium {
+      row-gap: 4rem;
+      text-align: left;
+      margin: 0;
+      margin-right: auto;
+      max-width: 21rem;
+
+      & > * {
+        justify-content: start;
+      }
+    }
   }
   &__description {
     font-size: 1.5rem;
@@ -50,8 +72,28 @@
 
   &__right {
     display: grid;
-    grid-template-columns: repeat(3, max-content);
-    column-gap: 12.5rem;
+    grid-template-columns: max-content;
+    column-gap: 6vw;
+
+    @include atSmall {
+      grid-template-columns: repeat(3, max-content);
+    }
+  }
+
+  &__group {
+    margin-bottom: 5rem;
+    text-align: center;
+
+    @include atSmall {
+      text-align: initial;
+      margin-bottom: 0;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 3.5rem;
+    font-weight: 500;
+    font-size: 2rem;
   }
 
   &__list {
@@ -60,11 +102,5 @@
   }
   &__link:hover {
     color: $color-primary;
-  }
-
-  &__heading {
-    margin-bottom: 3.5rem;
-    font-weight: 500;
-    font-size: 2rem;
   }
 }

@@ -2,38 +2,163 @@
   display: flex;
   align-items: center;
   font-size: 1.5rem;
-
+  padding: 1rem 0;
+  // background-color: green;
+  background-color: rgba(#fff, 0.95);
+  z-index: 50;
   & > *:first-child {
     // align zulu logo - push nav away from the logo
-    margin-right: 12.5rem;
+    margin-right: auto;
   }
+
+  // HEADER STICKy
+  position: sticky;
+  top: 0;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+
+    font-size: 1.5rem;
+    background-color: rgba(#fff, 0.95);
+    row-gap: 4rem;
+    z-index: 20;
+
+    @include atMedium {
+      gap: 0rem;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: static;
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // Show the navigation
+  &__wrapper--active {
+    font-size: 3rem;
+    height: 100vh;
+    opacity: 1;
+  }
+
   .nav {
     display: flex;
-    column-gap: 7.5rem;
-    margin-right: auto;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+
+    @include atMedium {
+      margin-right: 2rem;
+      flex-direction: row;
+      column-gap: 6rem;
+    }
 
     &__link:hover {
       color: $color-primary;
     }
   }
+
+  // Toggle Sign Up button to hav more space
+  .header__auth {
+    .btn:last-child {
+      @include atMedium {
+        display: none;
+      }
+      @include atExtraMedium {
+        display: initial;
+      }
+    }
+  }
+
+  // Navigation btn
+  &__nav-btn {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+
+    @include atMedium {
+      // hide when the nav visible
+      display: none;
+    }
+  }
+
+  &__nav-icon {
+    width: 100%;
+    height: 2px;
+    color: $color-secondary;
+    background-color: currentColor;
+    transition: background-color 0.5s;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      position: absolute;
+      transition: transform 0.3s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+  // Nav btn hover effect
+  &__nav-btn:hover &__nav-icon {
+    color: $color-primary;
+  }
+
+  // Nav btn animation when clicked
+  &__nav-btn--active &__nav-icon {
+    & {
+      background-color: transparent;
+      transition: background-color 0s;
+    }
+    &::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(225deg);
+    }
+  }
 }
 
+// using format from hv-wrapper class too
 .banner {
   margin-top: 7.5rem;
-  display: flex;
-  align-items: center;
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4rem;
-    width: 35%;
-  }
   &__img {
-    transform: translate(50px, -50px);
-    width: 65%;
+    @include atLarge {
+      transform: translate(40px, -50px);
+    }
   }
   .btn:first-child {
-    margin-right: 4rem;
+    margin-bottom: 1rem;
+    @include atSmall {
+      margin-bottom: 0;
+      margin-right: 4rem;
+    }
   }
 }

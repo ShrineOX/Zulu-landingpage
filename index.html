@@ -15,6 +15,7 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="wrapper">
@@ -24,19 +25,25 @@
           <img src="images/logo.jpg" alt="zulu logo" class="logo-icon" />
           <span class="logo-text">Zulu.</span>
         </a>
-        <ul class="nav">
-          <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Product</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-        </ul>
-        <div class="header__auth">
-          <a href="#" class="btn btn--no-border">Login</a>
-          <a href="#" class="btn btn--blue">Sign up</a>
+
+        <div class="header__wrapper">
+          <ul class="nav">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Product</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+          </ul>
+          <div class="header__auth">
+            <a href="#" class="btn btn--no-border">Login</a>
+            <a href="#" class="btn btn--blue">Sign up</a>
+          </div>
+        </div>
+        <div class="header__nav-btn">
+          <div class="header__nav-icon"></div>
         </div>
       </header>
 
-      <div class="banner">
+      <div class="banner hv-wrapper">
         <div class="banner__content">
           <h1 class="heading-1"><span>Make a</span> <span>big impact</span> <span>with exciting</span> videos</h1>
           <p class="generic-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique laudanti</p>
@@ -73,9 +80,9 @@
         </div>
       </section>
 
-      <section class="studio">
+      <section class="studio hv-wrapper">
         <div class="studio__content">
-          <h3 class="heading-3 heading-3--left">Zulu studio</h3>
+          <h3 class="heading-3 heading-3--left heading-3--right">Zulu studio</h3>
           <h2 class="heading-2">From our studio to your screen</h2>
           <p class="generic-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque illum non possimus neque numquam esse.
@@ -108,6 +115,7 @@
             <a href="#" class="btn card__btn">Start Now</a>
           </div>
           <div class="card card--text-align-right">
+            <p class="card__popular">Most popular</p>
             <div class="price__top-box">
               <h4 class="heading-4">Premium</h4>
               <p class="price__price"><sup>$</sup><span>29</span>/Month</p>
@@ -258,5 +266,6 @@
         </div>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

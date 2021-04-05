@@ -22,13 +22,6 @@ $color-secondary: #272e35;
 $color-pink: #ff858d;
 $color-grey: #a5b2c3;
 
-// format to blue button
-@mixin blueBtn {
-  background-color: $color-primary;
-  color: #fff;
-  border: 1px solid $color-primary-dark;
-}
-
 @keyframes pulsate {
   10% {
     transform: translateY(-1.5rem);

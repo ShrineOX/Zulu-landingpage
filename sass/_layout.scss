@@ -9,9 +9,51 @@
 }
 
 .container {
-  max-width: 114rem;
+  max-width: 120rem;
   margin: 0 auto;
-  padding-top: 4.5rem;
+  padding: 4.5rem 1.5rem 0 1.5rem;
+
+  @include atMedium {
+    padding: 4.5rem 3rem 0 3rem;
+  }
+}
+
+.hv-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include atLarge {
+    flex-direction: row;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4rem;
+    text-align: center;
+
+    p {
+      max-width: 50rem;
+      margin-inline: auto;
+    }
+
+    @include atLarge {
+      text-align: initial;
+      align-items: flex-start;
+      width: 35%;
+    }
+  }
+  & > img {
+    width: 100%;
+    max-width: 60rem;
+
+    @include atLarge {
+      width: 65%;
+      max-width: initial;
+    }
+  }
 }
 
 .section-col-container {
@@ -22,38 +64,42 @@
   text-align: center;
   row-gap: 4.5rem;
 }
-
+// SECTION LAYOUT
 // SECTION ABOUT-----------
 .about {
   &__content {
-    margin-top: 7rem;
+    margin-top: 1rem;
     display: flex;
-    gap: 7rem;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+
+    @include atLarge {
+      margin-top: 7rem;
+      gap: 7rem;
+    }
 
     & > div {
-      flex: 1;
+      flex: 0 0 32rem;
     }
   }
 }
 
 // SECTION STUDIO
+// using format from hv-wrapper class too
 .studio {
   margin-top: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  &__content {
-    width: calc(40% - 3.5rem);
-    display: grid;
-    grid-auto-rows: repeat(4, auto);
-    row-gap: 3rem;
-    justify-items: start;
-  }
-  &__img {
-    width: calc(60% - 3.5rem);
-    transform: scale(1.05) translateX(1rem);
+  @include atLarge {
+    flex-direction: row;
+    // hide the bar on the right
+    .heading-3::after {
+      content: none;
+    }
+
+    &__img {
+      transform: scale(1.05) translateX(1rem);
+    }
   }
 }
 
@@ -62,11 +108,16 @@
   &__content {
     width: 100%;
     margin-top: 7rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
 
     text-align: left; // reset the center value of section-col-container
+
+    & > div {
+      width: 31rem;
+    }
 
     h4 {
       font-weight: 500;
@@ -77,6 +128,7 @@
     width: 100%;
   }
   &__price {
+    // TEXT: $9/MONTH
     font-size: 2.3rem;
     font-weight: 600;
     position: relative;
@@ -98,21 +150,86 @@
       font-weight: 500;
     }
   }
+
+  .card {
+    position: relative;
+
+    &__popular {
+      position: absolute;
+      color: #fff;
+      background-color: $color-pink;
+      background-image: linear-gradient(#e9777e, #f79399, #e9777e);
+      padding: 1rem 1.5rem;
+      top: 0;
+      right: 0;
+      border-radius: 0 2rem;
+      overflow: hidden;
+
+      // Slash effect on the "Most Popular" mark
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right, transparent, #fff 20%, #fff 80%, transparent);
+        position: absolute;
+        top: 0;
+        left: -116%;
+        transform: skewX(-45deg);
+        transition: left 0.3s;
+      }
+    }
+
+    &:hover .card__popular::after {
+      left: 116%;
+    }
+
+    &__info {
+      color: $color-grey;
+    }
+
+    &__item {
+      margin-top: 3rem;
+      color: $color-grey;
+      display: flex;
+      align-items: center;
+
+      &:last-child {
+        margin-bottom: 5rem;
+      }
+
+      i {
+        font-size: 2.2rem;
+        margin-right: 0.5rem;
+      }
+    }
+    &:hover li {
+      color: $color-primary;
+    }
+  }
 }
 
 // SECTION CLIENT
 .clients {
   .heading-2 {
-    width: 45rem;
+    max-width: 45rem;
     margin-top: 2.5rem;
   }
 
   &__content {
-    margin-top: 8rem;
+    margin-top: 5rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 7rem;
+    grid-template-columns: repeat(3, 30rem);
     text-align: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    @include atLarge {
+      column-gap: 7rem;
+      margin-top: 8rem;
+    }
   }
   .card {
     row-gap: 0;
@@ -139,9 +256,13 @@
     }
   }
   &__arrow-box {
-    margin-top: 6rem;
+    margin-top: 1rem;
     color: $color-grey;
     font-size: 3rem;
+
+    @include atLarge {
+      margin-top: 6rem;
+    }
 
     i:first-child {
       margin-right: 4rem;
@@ -157,9 +278,10 @@
 .cta {
   margin-top: 11rem;
   margin-bottom: 6.5rem;
+  width: 100%;
 
   &__content {
-    width: 90rem;
+    width: 100%;
     margin-inline: auto;
     background-color: #fbfbfb;
     border-radius: 2rem;
@@ -167,9 +289,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6.5rem;
+    padding: 3rem 0.5rem;
+
+    @include atMedium {
+      padding: 6.5rem;
+      width: 80%;
+    }
+    & > *:not(img) {
+      z-index: 10;
+    }
+
     h2 {
-      width: 46rem;
+      max-width: 46rem;
       margin-top: 4rem;
       margin-bottom: 3rem;
     }
@@ -186,12 +317,29 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(30%, -30%);
+    transform: translateY(-20%) scale(0.4);
+    opacity: 0.5;
+    transform-origin: right;
   }
   &__chat {
     position: absolute;
     bottom: 0;
     left: 0;
+    opacity: 0.5;
+    transform: scale(0.6);
+    transform-origin: left;
+  }
+
+  @include atMedium {
+    &__smile {
+      transform: translate(50%, -40%);
+      opacity: 1;
+    }
+
+    &__chat {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   .btn {

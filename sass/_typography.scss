@@ -1,16 +1,32 @@
 .heading-1 {
-  font-size: 6rem;
+  font-size: 4rem;
   line-height: 1.3;
-  span {
-    display: block;
+  max-width: 80rem;
+
+  @include atSmall {
+    font-size: 4.5rem;
+  }
+  @include atLarge {
+    font-size: 6rem;
+
+    span {
+      display: block;
+    }
   }
 }
 .heading-2 {
-  font-size: 5.5rem;
+  font-size: 3.5rem;
   line-height: 1.3;
 
+  @include atSmall {
+    font-size: 4.5rem;
+  }
+  @include atLarge {
+    font-size: 5.5rem;
+  }
+
   &--narrow {
-    width: 40rem;
+    max-width: 40rem;
     text-align: center;
   }
 }
