@@ -546,6 +546,25 @@ html {
   top: 0;
   transform: rotate(225deg);
 }
+.header__notice {
+  min-height: 4rem;
+  opacity: 0;
+  height: 0;
+}
+@media screen and (min-width: 50em) {
+  .header__notice {
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 80%;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  }
+}
+.header__notice--active {
+  opacity: 1;
+  height: auto;
+  transition: all 0.3s;
+}
 
 .banner {
   margin-top: 7.5rem;
@@ -589,7 +608,9 @@ html {
 }
 .card__img {
   width: 12rem;
+  height: 12rem;
   border-radius: 50%;
+  object-fit: cover;
 }
 .card__btn {
   margin-top: auto;

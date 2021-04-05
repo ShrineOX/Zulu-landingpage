@@ -16,9 +16,15 @@ nav.addEventListener('click', e => {
   if (e.target.closest('.header__auth') === document.querySelector('.header__auth')) {
     headerNotice.textContent = '* This feature will be available soon.';
     headerNotice.style.cssText += 'color: red; font-size: 20px;';
+    headerNotice.classList.add('header__notice--active');
+
+    // Set timeout to clear the notification
+    setTimeout(() => {
+      headerNotice.classList.remove('header__notice--active');
+      headerNotice.textContent = '';
+    }, 2000);
     return;
   }
-  headerNotice.textContent = '';
   nav.classList.contains('header__wrapper--active') && toggleNav();
 });
 
@@ -27,7 +33,7 @@ function toggleNav() {
   navBtn.classList.toggle('header__nav-btn--active');
 }
 
-// CLIENT SECTION
+// CLIENT SECTION---------------------------------------------
 const arrLeft = document.querySelector('.clients__arr-left');
 const arrRight = document.querySelector('.clients__arr-right');
 const cardContainer = document.querySelector('.clients__content');

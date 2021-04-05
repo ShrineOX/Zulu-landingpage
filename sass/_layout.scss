@@ -263,10 +263,6 @@
     color: $color-grey;
     font-size: 3rem;
 
-    @include atLarge {
-      // margin-top: 6rem;
-    }
-
     i:first-child {
       margin-right: 4rem;
     }
